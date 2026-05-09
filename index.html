@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab Storage Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Lab server storage</p>
+          <h1>Storage Overview</h1>
+          <p class="lede">
+            Current server capacity, free space, and usage by lab member.
+          </p>
+        </div>
+        <p class="last-updated" id="lastUpdated"></p>
+      </header>
+
+      <section class="summary-grid" aria-label="Storage summary">
+        <article class="summary-card highlight">
+          <span class="metric-label">Space left</span>
+          <strong id="spaceLeft">0 GB</strong>
+          <span id="spaceLeftPercent">0% free</span>
+        </article>
+        <article class="summary-card">
+          <span class="metric-label">Total capacity</span>
+          <strong id="totalCapacity">0 GB</strong>
+          <span>Server quota</span>
+        </article>
+        <article class="summary-card">
+          <span class="metric-label">Used space</span>
+          <strong id="usedSpace">0 GB</strong>
+          <span id="usedPercent">0% used</span>
+        </article>
+      </section>
+
+      <section class="usage-section" aria-labelledby="usage-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">People</p>
+            <h2 id="usage-title">Usage by lab member</h2>
+          </div>
+          <span class="member-count" id="memberCount">0 members</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Usage</th>
+                <th scope="col">Share of server</th>
+              </tr>
+            </thead>
+            <tbody id="usageTable"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
