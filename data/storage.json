@@ -1,0 +1,138 @@
+{
+  "serverCapacityGb": 12000,
+  "lastUpdated": "May 10, 2026",
+  "members": [
+    {
+      "name": "Alice Martin",
+      "usageGb": 1430,
+      "details": [
+        {
+          "label": "Raw microscopy data",
+          "usageGb": 860
+        },
+        {
+          "label": "Processed datasets",
+          "usageGb": 340
+        },
+        {
+          "label": "Analysis notebooks",
+          "usageGb": 120
+        },
+        {
+          "label": "Exports and figures",
+          "usageGb": 110
+        }
+      ]
+    },
+    {
+      "name": "Ben Carter",
+      "usageGb": 980,
+      "details": [
+        {
+          "label": "Raw behavior videos",
+          "usageGb": 520
+        },
+        {
+          "label": "Tracking outputs",
+          "usageGb": 260
+        },
+        {
+          "label": "Analysis notebooks",
+          "usageGb": 80
+        },
+        {
+          "label": "Shared reports",
+          "usageGb": 120
+        }
+      ]
+    },
+    {
+      "name": "Chloe Singh",
+      "usageGb": 2210,
+      "details": [
+        {
+          "label": "Raw imaging sessions",
+          "usageGb": 1280
+        },
+        {
+          "label": "Preprocessed stacks",
+          "usageGb": 610
+        },
+        {
+          "label": "Model outputs",
+          "usageGb": 230
+        },
+        {
+          "label": "Manuscript figures",
+          "usageGb": 90
+        }
+      ]
+    },
+    {
+      "name": "Daniel Rossi",
+      "usageGb": 760,
+      "details": [
+        {
+          "label": "Electrophysiology recordings",
+          "usageGb": 420
+        },
+        {
+          "label": "Spike sorting results",
+          "usageGb": 180
+        },
+        {
+          "label": "Analysis notebooks",
+          "usageGb": 95
+        },
+        {
+          "label": "Archived exports",
+          "usageGb": 65
+        }
+      ]
+    },
+    {
+      "name": "Eva Nguyen",
+      "usageGb": 1325,
+      "details": [
+        {
+          "label": "Raw calcium imaging",
+          "usageGb": 730
+        },
+        {
+          "label": "Processed traces",
+          "usageGb": 310
+        },
+        {
+          "label": "Model checkpoints",
+          "usageGb": 210
+        },
+        {
+          "label": "Figures and tables",
+          "usageGb": 75
+        }
+      ]
+    },
+    {
+      "name": "Felix Meyer",
+      "usageGb": 540,
+      "details": [
+        {
+          "label": "Raw pilot data",
+          "usageGb": 260
+        },
+        {
+          "label": "Processed data",
+          "usageGb": 150
+        },
+        {
+          "label": "Analysis scripts",
+          "usageGb": 40
+        },
+        {
+          "label": "Temporary exports",
+          "usageGb": 90
+        }
+      ]
+    }
+  ]
+}
