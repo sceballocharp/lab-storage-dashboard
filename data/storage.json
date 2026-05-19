@@ -1,138 +1,116 @@
 {
-  "serverCapacityGb": 12000,
-  "lastUpdated": "May 10, 2026",
+  "serverCapacityTb": 100,
+  "lastUpdated": "May, 2026",
   "members": [
     {
-      "name": "Alice Martin",
-      "usageGb": 1430,
+      "name": "Allan",
+      "usageTotalGb": 0,
+      "details": [{
+          "label": "Users_folders",
+          "usageGb": 0
+        }]
+    },
+
+    {
+      "name": "Amel",
+      "usageTotalGb": 357,
+      "details": [{
+          "label": "Users_folders",
+          "usageGb": 357
+        }]
+    },
+
+    {
+      "name": "Anthony",
+      "usageTotalGb": 483,
+      "details": [{
+          "label": "Users_folders",
+          "usageGb": 483
+        }]
+    },
+
+    {
+      "name": "Antonin",
+      "usageTotalGb": 1.5,
+      "details": [{
+          "label": "Users_folders",
+          "usageGb": 1.51
+        }]
+    }, 
+
+    {
+      "name": "Azul",
+      "usageGb": 0.3,
       "details": [
         {
-          "label": "Raw microscopy data",
-          "usageGb": 860
-        },
+          "label": "Users_folders",
+          "usageMo": 310
+        }]
+    },
+
+    {
+      "name": "Braincoder",
+      "usageGb": 0,
+      "details": [
         {
-          "label": "Processed datasets",
-          "usageGb": 340
-        },
+          "label": "Users_folders",
+          "usageMo": 0
+        }]
+    },
+
+    {
+      "name": "Charly",
+      "usageGb": 0.1,
+      "details": [{
+          "label": "Users_folders",
+          "usageMO": 171
+        }]
+    },
+
+    {
+      "name": "Eya",
+      "usageGb": 59,
+      "details": [
         {
-          "label": "Analysis notebooks",
-          "usageGb": 120
-        },
+          "label": "Users_folders",
+          "usageGb": 59.5
+        }]
+    },
+
+    {
+      "name": "JulieJ",
+      "usageGb": 51,
+      "details": [
         {
-          "label": "Exports and figures",
-          "usageGb": 110
-        }
-      ]
+          "label": "Users_folders",
+          "usageGb": 51.5
+        }]
+    },
+
+    {
+      "name": "Ryan",
+      "usageGb": 173,
+      "details": [{
+          "label": "Users_folders",
+          "usageGb": 173
+        }]
+    },
+
+    {
+      "name": "Sebastian",
+      "usageTotalGb": 0.4,
+      "details": [{
+          "label": "Users_folders",
+          "usageMo": 491
+        }]
     },
     {
-      "name": "Ben Carter",
-      "usageGb": 980,
-      "details": [
-        {
-          "label": "Raw behavior videos",
-          "usageGb": 520
-        },
-        {
-          "label": "Tracking outputs",
-          "usageGb": 260
-        },
-        {
-          "label": "Analysis notebooks",
-          "usageGb": 80
-        },
-        {
-          "label": "Shared reports",
-          "usageGb": 120
-        }
-      ]
-    },
-    {
-      "name": "Chloe Singh",
-      "usageGb": 2210,
-      "details": [
-        {
-          "label": "Raw imaging sessions",
-          "usageGb": 1280
-        },
-        {
-          "label": "Preprocessed stacks",
-          "usageGb": 610
-        },
-        {
-          "label": "Model outputs",
-          "usageGb": 230
-        },
-        {
-          "label": "Manuscript figures",
-          "usageGb": 90
-        }
-      ]
-    },
-    {
-      "name": "Daniel Rossi",
-      "usageGb": 760,
-      "details": [
-        {
-          "label": "Electrophysiology recordings",
-          "usageGb": 420
-        },
-        {
-          "label": "Spike sorting results",
-          "usageGb": 180
-        },
-        {
-          "label": "Analysis notebooks",
-          "usageGb": 95
-        },
-        {
-          "label": "Archived exports",
-          "usageGb": 65
-        }
-      ]
-    },
-    {
-      "name": "Eva Nguyen",
-      "usageGb": 1325,
-      "details": [
-        {
-          "label": "Raw calcium imaging",
-          "usageGb": 730
-        },
-        {
-          "label": "Processed traces",
-          "usageGb": 310
-        },
-        {
-          "label": "Model checkpoints",
-          "usageGb": 210
-        },
-        {
-          "label": "Figures and tables",
-          "usageGb": 75
-        }
-      ]
-    },
-    {
-      "name": "Felix Meyer",
-      "usageGb": 540,
-      "details": [
-        {
-          "label": "Raw pilot data",
-          "usageGb": 260
-        },
-        {
-          "label": "Processed data",
-          "usageGb": 150
-        },
-        {
-          "label": "Analysis scripts",
-          "usageGb": 40
-        },
-        {
-          "label": "Temporary exports",
-          "usageGb": 90
-        }
-      ]
+      "name": "Sophie",
+      "usageTotalGb": 1.12,
+      "details": [{
+          "label": "Users_folders",
+          "usageGb": 1.12
+        }]
     }
   ]
 }
