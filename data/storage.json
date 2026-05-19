@@ -4,24 +4,16 @@
   "members": [
     {
       "name": "Allan",
-      "usageTotalGb": 1,
+      "usageTotalGb": 0,
       "details": [{
           "label": "Users_folders",
-          "usageGb": 1}]
-    },
-
-    {
-      "name": "Ryan2",
-      "usageGb": 1,
-      "details": [{
-          "label": "Users_folders",
-          "usageGb": 1
+          "usageGb": 0
         }]
     },
 
     {
       "name": "Amel",
-      "usageTotalGb": 357,
+      "usageTotalGb": 500,
       "details": [{
           "label": "Users_folders",
           "usageGb": 357
