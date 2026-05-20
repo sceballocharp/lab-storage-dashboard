@@ -1,18 +1,67 @@
-const formatGb = (value) =>
-  `${Math.round(value).toLocaleString("en-US")} GB`;
+const formatGb = (value) => {
+  const safeValue = Number.isFinite(value) ? value : 0;
+  const maximumFractionDigits = safeValue > 0 && safeValue < 10 ? 2 : 1;
+
+  return `${safeValue.toLocaleString("en-US", { maximumFractionDigits })} GB`;
+};
 
 const formatPercent = (value) =>
-  `${value.toLocaleString("en-US", { maximumFractionDigits: 1 })}%`;
+  `${(Number.isFinite(value) ? value : 0).toLocaleString("en-US", {
+    maximumFractionDigits: 1,
+  })}%`;
 
 const usageTable = document.querySelector("#usageTable");
 
+function getStorageGb(item) {
+  if (Number.isFinite(item.usageGb)) {
+    return item.usageGb;
+  }
+
+  if (Number.isFinite(item.usageTotalGb)) {
+    return item.usageTotalGb;
+  }
+
+  if (Number.isFinite(item.usageTb)) {
+    return item.usageTb * 1024;
+  }
+
+  if (Number.isFinite(item.usageMo)) {
+    return item.usageMo / 1024;
+  }
+
+  if (Number.isFinite(item.usageMO)) {
+    return item.usageMO / 1024;
+  }
+
+  return 0;
+}
+
+function normalizeMember(member) {
+  const details = (member.details || []).map((detail) => ({
+    ...detail,
+    usageGb: getStorageGb(detail),
+  }));
+  const detailTotalGb = details.reduce(
+    (total, detail) => total + detail.usageGb,
+    0,
+  );
+  const directUsageGb = getStorageGb(member);
+
+  return {
+    ...member,
+    usageGb: directUsageGb || detailTotalGb,
+    details,
+  };
+}
+
 function renderDashboard(data) {
-  const serverCapacityGb = data.serverCapacityGb;
-  const labMembers = data.members;
+  const serverCapacityGb =
+    data.serverCapacityGb || (data.serverCapacityTb || 0) * 1024;
+  const labMembers = data.members.map(normalizeMember);
   const usedGb = labMembers.reduce((total, member) => total + member.usageGb, 0);
   const freeGb = Math.max(serverCapacityGb - usedGb, 0);
-  const usedPercent = (usedGb / serverCapacityGb) * 100;
-  const freePercent = (freeGb / serverCapacityGb) * 100;
+  const usedPercent = serverCapacityGb > 0 ? (usedGb / serverCapacityGb) * 100 : 0;
+  const freePercent = serverCapacityGb > 0 ? (freeGb / serverCapacityGb) * 100 : 0;
 
   document.querySelector("#spaceLeft").textContent = formatGb(freeGb);
   document.querySelector("#spaceLeftPercent").textContent =
