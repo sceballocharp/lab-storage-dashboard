@@ -3,6 +3,15 @@
   "lastUpdated": "May, 2026",
   "members": [
     {
+      "name": "Achilleas",
+      "usageTotalGb": 13.32,
+      "details": [{
+          "label": "2P_Imaging/RawData",
+          "usageGb": 13.32
+        }]
+    },
+    
+    {
       "name": "Allan",
       "usageTotalGb": 0,
       "details": [{
@@ -13,7 +22,7 @@
 
     {
       "name": "Amel",
-      "usageTotalGb": 500,
+      "usageTotalGb": 357,
       "details": [{
           "label": "Users_folders",
           "usageGb": 357
@@ -22,16 +31,25 @@
 
     {
       "name": "Anthony",
-      "usageTotalGb": 483,
+      "usageTotalGb": 1062,
       "details": [{
           "label": "Users_folders",
           "usageGb": 483
+        },
+      {
+          "label": "2P_Imaging/Analysis",
+          "usageMo": 2.46
+        },
+      {
+          "label": "2P_Imaging/Processed",
+          "usageGb": 579.40
         }]
     },
 
     {
       "name": "Antonin",
       "usageTotalGb": 1.5,
+
       "details": [{
           "label": "Users_folders",
           "usageGb": 1.51
@@ -41,6 +59,7 @@
     {
       "name": "Azul",
       "usageGb": 0.3,
+
       "details": [
         {
           "label": "Users_folders",
@@ -50,17 +69,19 @@
 
     {
       "name": "Braincoder",
-      "usageGb": 0,
+      "usageGb": 1130,
+
       "details": [
         {
           "label": "Users_folders",
-          "usageMo": 0
+          "usageGb": 1130
         }]
     },
 
     {
       "name": "Charly",
       "usageGb": 0.1,
+
       "details": [{
           "label": "Users_folders",
           "usageMO": 171
@@ -70,6 +91,7 @@
     {
       "name": "Eya",
       "usageGb": 59,
+
       "details": [
         {
           "label": "Users_folders",
@@ -80,6 +102,7 @@
     {
       "name": "JulieJ",
       "usageGb": 51,
+
       "details": [
         {
           "label": "Users_folders",
@@ -88,8 +111,41 @@
     },
 
     {
+      "name": "Manvi",
+      "usageGb": 0,
+
+      "details": [
+        {
+          "label": "Users_folders",
+          "usageGb": 0
+        }]
+    },
+
+    {
+      "name": "Pierre",
+      "usageGb": 29.9,
+
+      "details": [
+        {
+          "label": "Users_folders",
+          "usageGb": 29.9
+        }]
+    },
+
+    {
+      "name": "Romain",
+      "usageGb": 0,
+
+      "details": [
+        {
+          "label": "Users_folders",
+          "usageGb": 0
+        }]
+    },
+    {
       "name": "Ryan",
       "usageGb": 173,
+
       "details": [{
           "label": "Users_folders",
           "usageGb": 173
@@ -99,6 +155,7 @@
     {
       "name": "Sebastian",
       "usageTotalGb": 0.4,
+
       "details": [{
           "label": "Users_folders",
           "usageMo": 491
@@ -106,10 +163,16 @@
     },
     {
       "name": "Sophie",
-      "usageTotalGb": 1.12,
+      "usageTotalGb": 112.03,
+
       "details": [{
           "label": "Users_folders",
           "usageGb": 1.12
+        },
+      
+      {
+          "label": "2P_Imaging/Analysis",
+          "usageGb": 110.91
         }]
     }
   ]
