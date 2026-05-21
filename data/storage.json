@@ -31,7 +31,7 @@
 
     {
       "name": "Anthony",
-      "usageTotalGb": 1062,
+      "usageTotalGb": 0,
       "details": [{
           "label": "Users_folders",
           "usageGb": 483
@@ -43,6 +43,10 @@
       {
           "label": "2P_Imaging/Processed",
           "usageGb": 579.40
+        },
+       {
+          "label": "2P_Imaging/RawData",
+          "usageGb": 285.1
         }]
     },
 
@@ -75,6 +79,16 @@
         {
           "label": "Users_folders",
           "usageGb": 1130
+        }]
+    },
+
+    {
+      "name": "Clara",
+      "usageGb": 0.2,
+
+      "details": [{
+          "label": "2P_Imaging/RawData",
+          "usageMO": 213
         }]
     },
 
@@ -134,12 +148,12 @@
 
     {
       "name": "Romain",
-      "usageGb": 0,
+      "usageGb": 480,
 
       "details": [
         {
           "label": "Users_folders",
-          "usageGb": 0
+          "usageGb": 480
         }]
     },
     {
@@ -163,7 +177,7 @@
     },
     {
       "name": "Sophie",
-      "usageTotalGb": 112.03,
+      "usageTotalGb": 0,
 
       "details": [{
           "label": "Users_folders",
@@ -173,6 +187,10 @@
       {
           "label": "2P_Imaging/Analysis",
           "usageGb": 110.91
+        },
+      {
+          "label": "2P_Imaging/RawData",
+          "usageGb": 42.59
         }]
     }
   ]
