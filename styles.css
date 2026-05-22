@@ -153,6 +153,10 @@ h2 {
   box-shadow: var(--shadow);
 }
 
+.usage-section + .usage-section {
+  margin-top: 24px;
+}
+
 .section-heading {
   display: flex;
   align-items: flex-end;
@@ -161,7 +165,7 @@ h2 {
   margin-bottom: 22px;
 }
 
-.member-count {
+.section-count {
   color: var(--muted);
   font-weight: 800;
 }

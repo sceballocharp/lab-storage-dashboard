@@ -10,6 +10,7 @@ const formatPercent = (value) =>
     maximumFractionDigits: 1,
   })}%`;
 
+const driveTable = document.querySelector("#driveTable");
 const usageTable = document.querySelector("#usageTable");
 
 function getStorageGb(item) {
@@ -36,8 +37,8 @@ function getStorageGb(item) {
   return 0;
 }
 
-function normalizeMember(member) {
-  const details = (member.details || []).map((detail) => ({
+function normalizeStorageItem(item) {
+  const details = (item.details || []).map((detail) => ({
     ...detail,
     usageGb: getStorageGb(detail),
   }));
@@ -45,47 +46,30 @@ function normalizeMember(member) {
     (total, detail) => total + detail.usageGb,
     0,
   );
-  const directUsageGb = getStorageGb(member);
+  const directUsageGb = getStorageGb(item);
 
   return {
-    ...member,
+    ...item,
     usageGb: directUsageGb || detailTotalGb,
     details,
   };
 }
 
-function renderDashboard(data) {
-  const serverCapacityGb =
-    data.serverCapacityGb || (data.serverCapacityTb || 0) * 1024;
-  const labMembers = data.members.map(normalizeMember);
-  const usedGb = labMembers.reduce((total, member) => total + member.usageGb, 0);
-  const freeGb = Math.max(serverCapacityGb - usedGb, 0);
-  const usedPercent = serverCapacityGb > 0 ? (usedGb / serverCapacityGb) * 100 : 0;
-  const freePercent = serverCapacityGb > 0 ? (freeGb / serverCapacityGb) * 100 : 0;
+function getWidthPercent(value) {
+  return Number.isFinite(value) ? Math.min(value, 100) : 0;
+}
 
-  document.querySelector("#spaceLeft").textContent = formatGb(freeGb);
-  document.querySelector("#spaceLeftPercent").textContent =
-    `${formatPercent(freePercent)} free`;
-  document.querySelector("#totalCapacity").textContent =
-    formatGb(serverCapacityGb);
-  document.querySelector("#usedSpace").textContent = formatGb(usedGb);
-  document.querySelector("#usedPercent").textContent =
-    `${formatPercent(usedPercent)} used`;
-  document.querySelector("#memberCount").textContent =
-    `${labMembers.length} members`;
-  document.querySelector("#lastUpdated").textContent =
-    `Updated ${data.lastUpdated}`;
+function renderStorageTable(items, table, serverCapacityGb, idPrefix) {
+  table.textContent = "";
 
-  usageTable.textContent = "";
-
-  [...labMembers]
+  [...items]
     .sort((a, b) => b.usageGb - a.usageGb)
-    .forEach((member, index) => {
-      const share = (member.usageGb / serverCapacityGb) * 100;
+    .forEach((item, index) => {
+      const share = serverCapacityGb > 0 ? (item.usageGb / serverCapacityGb) * 100 : 0;
       const row = document.createElement("tr");
       const detailsRow = document.createElement("tr");
-      const detailsId = `details-${index}`;
-      const buttonId = `person-${index}`;
+      const detailsId = `${idPrefix}-details-${index}`;
+      const buttonId = `${idPrefix}-item-${index}`;
 
       row.innerHTML = `
         <td>
@@ -96,16 +80,16 @@ function renderDashboard(data) {
             aria-expanded="false"
             aria-controls="${detailsId}"
           >
-            ${member.name}
+            ${item.name}
             <span aria-hidden="true">+</span>
           </button>
         </td>
         <td>
-          <strong>${formatGb(member.usageGb)}</strong>
+          <strong>${formatGb(item.usageGb)}</strong>
         </td>
         <td>
-          <div class="usage-meter" aria-label="${member.name} uses ${formatPercent(share)} of the server">
-            <span style="width: ${Math.min(share, 100)}%"></span>
+          <div class="usage-meter" aria-label="${item.name} uses ${formatPercent(share)} of the server">
+            <span style="width: ${getWidthPercent(share)}%"></span>
           </div>
           <span class="usage-percent">${formatPercent(share)}</span>
         </td>
@@ -118,13 +102,14 @@ function renderDashboard(data) {
         <td colspan="3">
           <div class="detail-panel" aria-labelledby="${buttonId}">
             <div class="detail-summary">
-              <strong>${member.name}</strong>
-              <span>${formatGb(member.usageGb)} total usage</span>
+              <strong>${item.name}</strong>
+              <span>${formatGb(item.usageGb)} total usage</span>
             </div>
             <div class="detail-list">
-              ${member.details
+              ${item.details
                 .map((detail) => {
-                  const detailShare = (detail.usageGb / member.usageGb) * 100;
+                  const detailShare =
+                    item.usageGb > 0 ? (detail.usageGb / item.usageGb) * 100 : 0;
 
                   return `
                     <div class="detail-item">
@@ -132,8 +117,8 @@ function renderDashboard(data) {
                         <span>${detail.label}</span>
                         <strong>${formatGb(detail.usageGb)}</strong>
                       </div>
-                      <div class="detail-meter" aria-label="${detail.label}: ${formatPercent(detailShare)} of ${member.name}'s usage">
-                        <span style="width: ${Math.min(detailShare, 100)}%"></span>
+                      <div class="detail-meter" aria-label="${detail.label}: ${formatPercent(detailShare)} of ${item.name}'s usage">
+                        <span style="width: ${getWidthPercent(detailShare)}%"></span>
                       </div>
                     </div>
                   `;
@@ -144,19 +129,49 @@ function renderDashboard(data) {
         </td>
       `;
 
-      usageTable.appendChild(row);
-      usageTable.appendChild(detailsRow);
+      table.appendChild(row);
+      table.appendChild(detailsRow);
 
-      const personButton = row.querySelector(".person-name");
+      const itemButton = row.querySelector(".person-name");
 
-      personButton.addEventListener("click", () => {
-        const isOpen = personButton.getAttribute("aria-expanded") === "true";
+      itemButton.addEventListener("click", () => {
+        const isOpen = itemButton.getAttribute("aria-expanded") === "true";
 
-        personButton.setAttribute("aria-expanded", String(!isOpen));
+        itemButton.setAttribute("aria-expanded", String(!isOpen));
         detailsRow.hidden = isOpen;
-        personButton.querySelector("span").textContent = isOpen ? "+" : "-";
+        itemButton.querySelector("span").textContent = isOpen ? "+" : "-";
       });
     });
+}
+
+function renderDashboard(data) {
+  const serverCapacityGb =
+    data.serverCapacityGb || (data.serverCapacityTb || 0) * 1024;
+  const drives = (data.drives || data.Drives || []).map(normalizeStorageItem);
+  const labMembers = (data.members || data.Members || []).map(normalizeStorageItem);
+  const summaryItems = drives.length > 0 ? drives : labMembers;
+  const usedGb = summaryItems.reduce((total, item) => total + item.usageGb, 0);
+  const freeGb = Math.max(serverCapacityGb - usedGb, 0);
+  const usedPercent = serverCapacityGb > 0 ? (usedGb / serverCapacityGb) * 100 : 0;
+  const freePercent = serverCapacityGb > 0 ? (freeGb / serverCapacityGb) * 100 : 0;
+
+  document.querySelector("#spaceLeft").textContent = formatGb(freeGb);
+  document.querySelector("#spaceLeftPercent").textContent =
+    `${formatPercent(freePercent)} free`;
+  document.querySelector("#totalCapacity").textContent =
+    formatGb(serverCapacityGb);
+  document.querySelector("#usedSpace").textContent = formatGb(usedGb);
+  document.querySelector("#usedPercent").textContent =
+    `${formatPercent(usedPercent)} used`;
+  document.querySelector("#driveCount").textContent =
+    `${drives.length} ${drives.length === 1 ? "drive" : "drives"}`;
+  document.querySelector("#memberCount").textContent =
+    `${labMembers.length} members`;
+  document.querySelector("#lastUpdated").textContent =
+    `Updated ${data.lastUpdated}`;
+
+  renderStorageTable(drives, driveTable, serverCapacityGb, "drive");
+  renderStorageTable(labMembers, usageTable, serverCapacityGb, "member");
 }
 
 async function loadDashboard() {
@@ -170,6 +185,7 @@ async function loadDashboard() {
     const data = await response.json();
     renderDashboard(data);
   } catch (error) {
+    driveTable.innerHTML = "";
     usageTable.innerHTML = `
       <tr>
         <td colspan="3">

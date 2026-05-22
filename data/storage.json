@@ -1,12 +1,26 @@
 {
   "serverCapacityTb": 100,
   "lastUpdated": "May, 2026",
-  "members": [
+  "Drives": [
+    {
+      "name": "Gaia",
+      "usageTotalGb": 19521,
+      "details": [
+        {
+          "label": "ALL",
+          "usageGb": 19521
+        }]
+    }
+  ],
+
+  "Members": [
+    
     {
       "name": "Achilleas",
       "usageTotalGb": 13.32,
-      "details": [{
-          "label": "2P_Imaging/RawData",
+      "details": [
+        {
+          "label": "Data/2P_Imaging/RawData",
           "usageGb": 13.32
         }]
     },
@@ -14,16 +28,22 @@
     {
       "name": "Allan",
       "usageTotalGb": 0,
-      "details": [{
+      "details": [
+        {
           "label": "Users_folders",
           "usageGb": 0
+        },
+        {
+          "label": "Data/Histology",
+          "usageMo": 994.05
         }]
     },
 
     {
       "name": "Amel",
       "usageTotalGb": 357,
-      "details": [{
+      "details": [
+        {
           "label": "Users_folders",
           "usageGb": 357
         }]
@@ -32,24 +52,25 @@
     {
       "name": "Anthony",
       "usageTotalGb": 0,
-      "details": [{
+      "details": [
+        {
           "label": "Users_folders",
           "usageGb": 483
         },
       {
-          "label": "2P_Imaging/Analysis",
+          "label": "Data/2P_Imaging/Analysis",
           "usageMo": 2.46
         },
       {
-          "label": "2P_Imaging/Processed",
+          "label": "Data/2P_Imaging/Processed",
           "usageGb": 579.40
         },
        {
-          "label": "2P_Imaging/RawData",
+          "label": "Data/2P_Imaging/RawData",
           "usageGb": 285.1
         },
       {
-          "label": "Electrophysiology",
+          "label": "Data/Electrophysiology",
           "usageGb": 762.6
         }]
     },
@@ -58,7 +79,8 @@
       "name": "Antonin",
       "usageTotalGb": 0,
 
-      "details": [{
+      "details": [
+        {
           "label": "Users_folders",
           "usageGb": 1.51
         }]
@@ -90,13 +112,14 @@
       "name": "Clara",
       "usageGb": 0,
 
-      "details": [{
-          "label": "2P_Imaging/RawData",
+      "details": [
+        {
+          "label": "Data/2P_Imaging/RawData",
           "usageMO": 213       
         },
 
         {
-          "label": "Electrophysiology",
+          "label": "Data/Electrophysiology",
           "usageMo": 1.92
         }]
     },
@@ -105,7 +128,8 @@
       "name": "Charly",
       "usageGb": 0,
 
-      "details": [{
+      "details": [
+        {
           "label": "Users_folders",
           "usageMO": 171
         }]
@@ -119,6 +143,10 @@
         {
           "label": "Users_folders",
           "usageGb": 59.5
+        },
+      {
+          "label": "Data/Histology",
+          "usageGb": 46.49
         }]
     },
 
@@ -133,8 +161,13 @@
         },
 
         {
-          "label": "Electrophysiology",
+          "label": "Data/Electrophysiology",
           "usageGb": 7813
+        },
+       
+        {
+          "label": "Data/Histology",
+          "usageGb": 32.56
         }]
     },
 
@@ -159,7 +192,7 @@
           "usageGb": 29.9
         },
         {
-          "label": "Electrophysiology",
+          "label": "Data/Electrophysiology",
           "usageGb": 603.11
         }]
     },
@@ -179,7 +212,8 @@
       "name": "Ryan",
       "usageGb": 0,
 
-      "details": [{
+      "details": [
+        {
           "label": "Users_folders",
           "usageGb": 173
         }]
@@ -189,7 +223,8 @@
       "name": "Sebastian",
       "usageTotalGb": 0,
 
-      "details": [{
+      "details": [
+        {
           "label": "Users_folders",
           "usageMo": 491
         }]
@@ -199,17 +234,18 @@
       "name": "Sophie",
       "usageTotalGb": 0,
 
-      "details": [{
+      "details": [
+        {
           "label": "Users_folders",
           "usageGb": 1.12
         },
       
       {
-          "label": "2P_Imaging/Analysis",
+          "label": "Data/2P_Imaging/Analysis",
           "usageGb": 110.91
         },
       {
-          "label": "2P_Imaging/RawData",
+          "label": "Data/2P_Imaging/RawData",
           "usageGb": 42.59
         }]
     }
