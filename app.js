@@ -149,7 +149,7 @@ function renderDashboard(data) {
     data.serverCapacityGb || (data.serverCapacityTb || 0) * 1024;
   const drives = (data.drives || data.Drives || []).map(normalizeStorageItem);
   const labMembers = (data.members || data.Members || []).map(normalizeStorageItem);
-  const summaryItems = drives.length > 0 ? drives : labMembers;
+  const summaryItems = [...drives, ...labMembers];
   const usedGb = summaryItems.reduce((total, item) => total + item.usageGb, 0);
   const freeGb = Math.max(serverCapacityGb - usedGb, 0);
   const usedPercent = serverCapacityGb > 0 ? (usedGb / serverCapacityGb) * 100 : 0;
