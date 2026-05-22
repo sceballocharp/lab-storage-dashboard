@@ -4,11 +4,25 @@
   "Drives": [
     {
       "name": "Gaia",
-      "usageTotalGb": 19521,
+      "usageTotalGb": 0,
       "details": [
         {
           "label": "ALL",
           "usageGb": 19521
+        }]
+    },
+
+    {
+      "name": "Zeus",
+      "usageTotalGb": 0,
+      "details": [
+        {
+          "label": "Alicia",
+          "usageMo": 40.65
+        },
+      {
+          "label": "Allan",
+          "usageGb": 289.06
         }]
     }
   ],
@@ -83,6 +97,10 @@
         {
           "label": "Users_folders",
           "usageGb": 1.51
+        },
+      {
+          "label": "Data/Intrinsic_Imaging",
+          "usageGb": 19.8
         }]
     }, 
 
@@ -194,6 +212,10 @@
         {
           "label": "Data/Electrophysiology",
           "usageGb": 603.11
+        },
+        {
+          "label": "Data/Histology",
+          "usageGb": 74.41
         }]
     },
 
