@@ -130,6 +130,11 @@
         {
           "label": "Users_folders",
           "usageGb": 51.5
+        },
+
+        {
+          "label": "Electrophysiology",
+          "usageGb": 7813
         }]
     },
 
@@ -152,6 +157,10 @@
         {
           "label": "Users_folders",
           "usageGb": 29.9
+        },
+        {
+          "label": "Electrophysiology",
+          "usageGb": 603.11
         }]
     },
 
@@ -185,7 +194,7 @@
           "usageMo": 491
         }]
     },
-    
+
     {
       "name": "Sophie",
       "usageTotalGb": 0,
