@@ -23,7 +23,24 @@
       {
           "label": "Allan",
           "usageGb": 289.06
-        }]
+        },
+      {
+          "label": "Antonin",
+          "usageGb": 3931.44 
+        },
+      {
+          "label": "Braincoder",
+          "usageGb": 2.8
+        },
+      {
+          "label": "Charly",
+          "usageGb": 840.31
+      },
+      {
+          "label": "Julie",
+          "usageGb": 191.4
+        }
+      ]
     }
   ],
 
