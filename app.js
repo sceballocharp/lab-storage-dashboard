@@ -11,6 +11,7 @@ const formatPercent = (value) =>
   })}%`;
 
 const driveTable = document.querySelector("#driveTable");
+const commonTable = document.querySelector("#commonTable");
 const usageTable = document.querySelector("#usageTable");
 
 function getStorageGb(item) {
@@ -148,8 +149,9 @@ function renderDashboard(data) {
   const serverCapacityGb =
     data.serverCapacityGb || (data.serverCapacityTb || 0) * 1024;
   const drives = (data.drives || data.Drives || []).map(normalizeStorageItem);
+  const common = (data.common || data.Common || []).map(normalizeStorageItem);
   const labMembers = (data.members || data.Members || []).map(normalizeStorageItem);
-  const summaryItems = [...drives, ...labMembers];
+  const summaryItems = [...drives, ...common, ...labMembers];
   const usedGb = summaryItems.reduce((total, item) => total + item.usageGb, 0);
   const freeGb = Math.max(serverCapacityGb - usedGb, 0);
   const usedPercent = serverCapacityGb > 0 ? (usedGb / serverCapacityGb) * 100 : 0;
@@ -165,12 +167,15 @@ function renderDashboard(data) {
     `${formatPercent(usedPercent)} used`;
   document.querySelector("#driveCount").textContent =
     `${drives.length} ${drives.length === 1 ? "drive" : "drives"}`;
+  document.querySelector("#commonCount").textContent =
+    `${common.length} ${common.length === 1 ? "common area" : "common areas"}`;
   document.querySelector("#memberCount").textContent =
     `${labMembers.length} members`;
   document.querySelector("#lastUpdated").textContent =
     `Updated ${data.lastUpdated}`;
 
   renderStorageTable(drives, driveTable, serverCapacityGb, "drive");
+  renderStorageTable(common, commonTable, serverCapacityGb, "common");
   renderStorageTable(labMembers, usageTable, serverCapacityGb, "member");
 }
 
@@ -186,6 +191,7 @@ async function loadDashboard() {
     renderDashboard(data);
   } catch (error) {
     driveTable.innerHTML = "";
+    commonTable.innerHTML = "";
     usageTable.innerHTML = `
       <tr>
         <td colspan="3">

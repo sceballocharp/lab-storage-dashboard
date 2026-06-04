@@ -52,7 +52,24 @@
         {
           "label": "Shared_Resources",
           "usageGb": 491
-        }]
+        },
+       {
+          "label": "Datasets/Etienne",
+          "usageGb": 44.8
+        },
+        {
+          "label": "Datasets/SophieDEEPEN",
+          "usageGb": 56.1
+        },
+        {
+          "label": "Projects/Bifurc",
+          "usageGb": 1660
+        },
+        {
+          "label": "Projects/Braincodec",
+          "usageGb": 295.42
+        }
+      ]
     }
   ],
 
