@@ -1,6 +1,6 @@
 {
   "serverCapacityTb": 100,
-  "lastUpdated": "May, 2026",
+  "lastUpdated": "Jun, 2026",
   "Drives": [
     {
       "name": "Gaia",
@@ -41,6 +41,18 @@
           "usageGb": 191.4
         }
       ]
+    }
+  ],
+
+  "Common": [
+    {
+      "name": "Shared",
+      "usageTotalGb": 0,
+      "details": [
+        {
+          "label": "Shared_Resources",
+          "usageGb": 491
+        }]
     }
   ],
 
@@ -86,7 +98,7 @@
       "details": [
         {
           "label": "Users_folders",
-          "usageGb": 483
+          "usageGb": 487.43
         },
       {
           "label": "Data/2P_Imaging/Analysis",
@@ -94,15 +106,15 @@
         },
       {
           "label": "Data/2P_Imaging/Processed",
-          "usageGb": 579.40
+          "usageGb": 643.58
         },
        {
           "label": "Data/2P_Imaging/RawData",
-          "usageGb": 285.1
+          "usageGb": 323.32
         },
       {
           "label": "Data/Electrophysiology",
-          "usageGb": 762.6
+          "usageGb": 872.5
         }]
     },
 
@@ -128,7 +140,18 @@
       "details": [
         {
           "label": "Users_folders",
-          "usageMo": 310
+          "usageGb": 14
+        }]
+    },
+    
+    {
+      "name": "aquaresi",
+      "usageGb": 0,
+
+      "details": [
+        {
+          "label": "Users_folders",
+          "usageMo": 3144.22
         }]
     },
 
@@ -139,7 +162,7 @@
       "details": [
         {
           "label": "Users_folders",
-          "usageGb": 1130
+          "usageGb": 1175.4
         }]
     },
 
@@ -155,7 +178,7 @@
 
         {
           "label": "Data/Electrophysiology",
-          "usageMo": 1.92
+          "usageGb": 1.92
         }]
     },
 
@@ -186,18 +209,29 @@
     },
 
     {
+      "name": "Ivalu",
+      "usageGb": 0,
+
+      "details": [
+        {
+          "label": "Users_folders",
+          "usageGb": 22.97
+        }]
+    },
+
+    {
       "name": "JulieJ",
       "usageGb": 0,
 
       "details": [
         {
           "label": "Users_folders",
-          "usageGb": 51.5
+          "usageGb": 51.7
         },
 
         {
           "label": "Data/Electrophysiology",
-          "usageGb": 7813
+          "usageGb": 7108
         },
        
         {
@@ -228,7 +262,7 @@
         },
         {
           "label": "Data/Electrophysiology",
-          "usageGb": 603.11
+          "usageGb": 604.54
         },
         {
           "label": "Data/Histology",
@@ -243,7 +277,7 @@
       "details": [
         {
           "label": "Users_folders",
-          "usageGb": 480
+          "usageGb": 1532.52
         }]
     },
 
@@ -254,7 +288,7 @@
       "details": [
         {
           "label": "Users_folders",
-          "usageGb": 173
+          "usageGb": 184
         }]
     },
 
@@ -265,7 +299,7 @@
       "details": [
         {
           "label": "Users_folders",
-          "usageMo": 491
+          "usageMo": 938
         }]
     },
 
