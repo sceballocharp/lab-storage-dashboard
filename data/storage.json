@@ -11,9 +11,41 @@
           "usageGb": 2274.48
         },
         {
-          "label": "Data",
-          "usageGb": 33306
+          "label": "Data/2P_Imaging",
+          "usageGb": 18330
         },  
+        {
+          "label": "Data/2P_Test_folder",
+          "usageGb": 244
+        },
+        {
+          "label": "Data/Behavior",
+          "usageGb": 1260
+        },
+        {
+          "label": "Data/Datasets",
+          "usageGb": 7.4
+        },
+          {
+          "label": "Data/Electrophysiology",
+          "usageGb": 15001
+        },
+          {
+          "label": "Data/Histology",
+          "usageGb": 482
+        },
+        {
+          "label": "Data/Intrinsic_Imaging",
+          "usageGb": 284
+        },
+        {
+          "label": "Data/MachineLearning",
+          "usageGb": 11.26
+        },
+        {
+          "label": "Data/Optogenetic",
+          "usageGb": 60.25
+        },
         {
           "label": "Decorrelation",
           "usageGb": 1.9
