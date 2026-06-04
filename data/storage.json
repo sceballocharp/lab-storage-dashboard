@@ -7,9 +7,28 @@
       "usageTotalGb": 0,
       "details": [
         {
-          "label": "ALL",
-          "usageGb": 19521
-        }]
+          "label": "BASIL",
+          "usageGb": 2274.48
+        },
+        {
+          "label": "Data",
+          "usageGb": 33306
+        },  
+        {
+          "label": "Decorrelation",
+          "usageGb": 1.9
+        },  
+        {
+          "label": "Shared_resources",
+          "usageGb": 36.89
+        },  
+        {
+          "label": "Users_folders",
+          "usageGb": 18446.47
+        },
+      
+      
+      ]
     },
 
     {
@@ -36,6 +55,10 @@
           "label": "Charly",
           "usageGb": 840.31
       },
+      {
+          "label": "Corentin",
+          "usageGb": 6830
+        }
       {
           "label": "Julie",
           "usageGb": 191.4
