@@ -33,7 +33,7 @@
             "JulieJ 3,85 3.85 GB",
             "Enora 1,43 1.43 GB",
             "Suite2P_options 0,02 18.43 MB"
-                    ]
+          ]
         },
         {
           "label": "Data/2P_Imaging/Rawdata",
@@ -49,7 +49,7 @@
             "Mega2P 7,41 7.41 GB",
             "Antonin 0,57 581.09 MB",
             "Brice 0,00 68.50 KB"
-                    ]
+          ]
         },
         {
           "label": "Data/2P_Test_folder",
@@ -65,8 +65,25 @@
         },
           {
           "label": "Data/Electrophysiology",
-          "usageGb": 15001
-        },
+          "usageGb": 15001,
+          "note": [
+            "Eleni 5 339,61 5.21 TB",
+            "Antonin 4 638,82 4.53 TB",
+            "JulieJ 2 417,01 2.36 TB",
+            "Allan 1 055,78 1.03 TB",
+            "Sophie 412,24 412.24 GB",
+            "Emi 66,91 66.91 GB",
+            "Jehanne 35,77 35.77 GB",
+            "JulieL 2,18 2.18 GB",
+            "Some data - unknow user 1,53 1.53 GB",
+            "Brice 0,64 660.08 MB",
+            "Ai27_Circles_Exp 0,52 535.07 MB",
+            "Clara 0,00 0 bytes",
+            "Ephy_Rec_C45M2 0,00 4.12 MB",
+            "Pierre 0,00 0 bytes",
+            "Results 0,00 3.30 KB"
+          ]
+            },
           {
           "label": "Data/Histology",
           "usageGb": 482
