@@ -1,4 +1,4 @@
-const formatGb = (value) => {
+﻿const formatGb = (value) => {
   const safeValue = Number.isFinite(value) ? value : 0;
   const maximumFractionDigits = safeValue > 0 && safeValue < 10 ? 2 : 1;
 
@@ -60,6 +60,23 @@ function getWidthPercent(value) {
   return Number.isFinite(value) ? Math.min(value, 100) : 0;
 }
 
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function formatNote(note) {
+  if (Array.isArray(note)) {
+    return `<ul>${note.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+  }
+
+  return `<p>${escapeHtml(note)}</p>`;
+}
+
 function renderStorageTable(items, table, serverCapacityGb, idPrefix) {
   table.textContent = "";
 
@@ -112,15 +129,24 @@ function renderStorageTable(items, table, serverCapacityGb, idPrefix) {
                   const detailShare =
                     item.usageGb > 0 ? (detail.usageGb / item.usageGb) * 100 : 0;
 
+                  const hasNote = Boolean(detail.note);
+                  const noteId = `${idPrefix}-note-${index}-${detail.label
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, "-")}`;
+                  const labelMarkup = hasNote
+                    ? `<button class="detail-note-toggle" type="button" aria-expanded="false" aria-controls="${noteId}">${escapeHtml(detail.label)} <span aria-hidden="true">+</span></button>`
+                    : `<span>${escapeHtml(detail.label)}</span>`;
+
                   return `
                     <div class="detail-item">
                       <div class="detail-label">
-                        <span>${detail.label}</span>
+                        ${labelMarkup}
                         <strong>${formatGb(detail.usageGb)}</strong>
                       </div>
-                      <div class="detail-meter" aria-label="${detail.label}: ${formatPercent(detailShare)} of ${item.name}'s usage">
+                      <div class="detail-meter" aria-label="${escapeHtml(detail.label)}: ${formatPercent(detailShare)} of ${escapeHtml(item.name)}'s usage">
                         <span style="width: ${getWidthPercent(detailShare)}%"></span>
                       </div>
+                      ${hasNote ? `<div class="detail-note" id="${noteId}" hidden>${formatNote(detail.note)}</div>` : ""}
                     </div>
                   `;
                 })
@@ -141,6 +167,17 @@ function renderStorageTable(items, table, serverCapacityGb, idPrefix) {
         itemButton.setAttribute("aria-expanded", String(!isOpen));
         detailsRow.hidden = isOpen;
         itemButton.querySelector("span").textContent = isOpen ? "+" : "-";
+      });
+
+      detailsRow.querySelectorAll(".detail-note-toggle").forEach((noteButton) => {
+        noteButton.addEventListener("click", () => {
+          const note = detailsRow.querySelector(`#${noteButton.getAttribute("aria-controls")}`);
+          const isOpen = noteButton.getAttribute("aria-expanded") === "true";
+
+          noteButton.setAttribute("aria-expanded", String(!isOpen));
+          note.hidden = isOpen;
+          noteButton.querySelector("span").textContent = isOpen ? "+" : "-";
+        });
       });
     });
 }
@@ -204,3 +241,4 @@ async function loadDashboard() {
 }
 
 loadDashboard();
+

@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   color-scheme: light;
   --bg: #f3f6f4;
   --surface: #ffffff;
@@ -302,6 +302,55 @@ td:nth-child(3) {
   white-space: nowrap;
 }
 
+.detail-note-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  font-weight: 800;
+  text-align: left;
+  cursor: pointer;
+}
+
+.detail-note-toggle:hover,
+.detail-note-toggle:focus-visible {
+  color: var(--accent);
+}
+
+.detail-note-toggle span {
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: var(--accent);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.detail-note {
+  margin-top: 10px;
+  padding: 12px 14px;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  line-height: 1.5;
+}
+
+.detail-note p,
+.detail-note ul {
+  margin: 0;
+}
+
+.detail-note ul {
+  padding-left: 20px;
+}
+
 .detail-meter {
   height: 9px;
   overflow: hidden;
@@ -346,3 +395,4 @@ td:nth-child(3) {
     gap: 6px;
   }
 }
+

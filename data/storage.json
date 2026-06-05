@@ -12,8 +12,30 @@
         },
         {
           "label": "Data/2P_Imaging",
-          "usageGb": 18332
-        },  
+          "usageGb": 18332,
+          "note": [
+                      "AcoustAllOpto	182,82	182.82 GB",
+                      "Allan	4 811,33	4.70 TB",
+                      "Anthony_Renard	408,73	408.73 GB",
+                      "Antoine	459,09	459.09 GB",
+                      "Anton	49,26	49.26 GB",
+                      "Brice	235,98	235.98 GB",
+                      "Elena	29,40	29.40 GB",
+                      "Enora	1,43	1.43 GB",
+                      "Jacques	1 813,43	1.77 TB",
+                      "Joanna	1 867,20	1.82 TB",
+                      "JulieJ	3,85	3.85 GB",
+                      "Juliette	120,77	120.77 GB",
+                      "Mathilde	9,92	9.92 GB",
+                      "Matteo	117,32	117.32 GB",
+                      "Mouse856017	11,35	11.35 GB",
+                      "Sebastian	93,93	93.93 GB",
+                      "Sophie	454,88	454.88 GB",
+                      "Suite2P_options	0,02	18.43 MB",
+                      "Thibault	148,92	148.92 GB" 
+                    ]
+        },
+
         {
           "label": "Data/2P_Test_folder",
           "usageGb": 244
